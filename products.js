@@ -1,7 +1,7 @@
 const products = [
   {
     title: "Bamboo Kitchen Organizer",
-    image: "https://picsum.photos/300",
+    image: "https://images.unsplash.com/photo-1556911220-bff31c5b3d1c?w=500",
     price: "$19.99",
     link: "https://www.amazon.com/"
   },
