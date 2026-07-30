@@ -4,24 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Zovoz - Home Products</title>
+<title>Zovoz - Kitchen & Dining</title>
 
 <style>
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     background: #f7f7f7;
-    color: #222;
 }
 
 header {
     background: white;
-    padding: 25px;
+    padding: 30px;
     text-align: center;
-}
-
-h1 {
-    margin: 0;
 }
 
 .products {
@@ -43,13 +38,13 @@ h1 {
     border-radius: 10px;
 }
 
-button {
-    background: #000;
+.button {
+    display: inline-block;
+    background: black;
     color: white;
-    border: none;
     padding: 12px 20px;
     border-radius: 8px;
-    cursor: pointer;
+    text-decoration: none;
 }
 </style>
 
@@ -58,38 +53,44 @@ button {
 <body>
 
 <header>
-<h1>Home Products</h1>
-<p>Smart products for everyday life</p>
+<h1>Kitchen & Dining Products</h1>
+<p>Smart products for your everyday kitchen</p>
 </header>
 
 
-<div class="products">
+<div class="products" id="product-list"></div>
+
+
+<script src="products.js"></script>
+
+<script>
+
+const container = document.getElementById("product-list");
+
+products.forEach(product => {
+
+container.innerHTML += `
 
 <div class="product">
-<img src="https://via.placeholder.com/300">
 
-<h2>Kitchen Organizer</h2>
+<img src="${product.image}">
 
-<p>A useful product to keep your home organized.</p>
+<h2>${product.title}</h2>
 
-<button>View Product</button>
+<p>${product.price}</p>
 
-</div>
-
-
-<div class="product">
-<img src="https://via.placeholder.com/300">
-
-<h2>Smart Home Product</h2>
-
-<p>Discover practical products for your home.</p>
-
-<button>View Product</button>
+<a class="button" href="${product.link}" target="_blank">
+View on Amazon
+</a>
 
 </div>
 
+`;
 
-</div>
+});
+
+</script>
+
 
 </body>
 </html>
